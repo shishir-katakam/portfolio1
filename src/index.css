@@ -12,7 +12,12 @@
 
 @layer base {
   body {
-    @apply bg-background text-primary font-mono cursor-none overflow-x-hidden;
+    @apply bg-background text-primary font-mono overflow-x-hidden;
+    cursor: none !important;
+  }
+  
+  * {
+    cursor: none !important;
   }
 }
 
