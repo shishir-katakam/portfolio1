@@ -166,69 +166,82 @@ export const Skills = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {[
                     {
-                        title: "“This is Animation” Course",
+                        title: '“This is Animation” Course',
                         org: "Sony Pictures Animation & Imageworks",
-                        desc: "Learned fundamentals of animation production, storytelling, and industry workflows used in professional studios."
+                        desc: "Learned fundamentals of animation production, storytelling, and industry workflows used in professional studios.",
+                        link: "https://raw.githubusercontent.com/shishir-katakam/portfolio1/main/certificates/1.png"
                     },
                     {
                         title: "5-Day AI Agents Intensive Course",
                         org: "Google x Kaggle",
-                        desc: "Completed an intensive program focused on building and understanding AI agents, including workflows, automation, and real-world applications using modern AI tools."
+                        desc: "Completed an intensive program focused on building and understanding AI agents, including workflows, automation, and real-world applications using modern AI tools.",
+                        link: "https://raw.githubusercontent.com/shishir-katakam/portfolio1/main/certificates/2.png"
                     },
                     {
                         title: "Solutions Architecture Job Simulation",
                         org: "AWS x Forage",
-                        desc: "Designed scalable cloud architectures using AWS services, focusing on real-world system design, cost optimization, and deployment strategies."
+                        desc: "Designed scalable cloud architectures using AWS services, focusing on real-world system design, cost optimization, and deployment strategies.",
+                        link: "https://raw.githubusercontent.com/shishir-katakam/portfolio1/main/certificates/3.png"
                     },
                     {
                         title: "Summer of AI Internship (4 Weeks)",
                         org: "Viswam AI, Swecha, IIIT Hyderabad, Meta",
-                        desc: "Built AI/ML projects, explored LLMs and real-world AI applications, and collaborated in a structured internship environment with mentorship."
+                        desc: "Built AI/ML projects, explored LLMs and real-world AI applications, and collaborated in a structured internship environment with mentorship.",
+                        link: "https://raw.githubusercontent.com/shishir-katakam/portfolio1/main/certificates/4.png"
                     },
                     {
                         title: "HackWithIndia VibeHack",
                         org: "Ranked under top 1000 teams",
-                        desc: "Participated in a competitive hackathon, developing innovative solutions under time constraints and collaborating in a high-pressure environment."
+                        desc: "Participated in a competitive hackathon, developing innovative solutions under time constraints and collaborating in a high-pressure environment.",
+                        link: "https://raw.githubusercontent.com/shishir-katakam/portfolio1/main/certificates/5.png"
                     },
                     {
                         title: "Regression Model for Ride Fare Prediction",
                         org: "Aspire Skills & Knowledge x Uber",
-                        desc: "Developed a machine learning regression model to predict ride fares using data preprocessing, feature engineering, and model evaluation techniques."
+                        desc: "Developed a machine learning regression model to predict ride fares using data preprocessing, feature engineering, and model evaluation techniques.",
+                        link: "https://raw.githubusercontent.com/shishir-katakam/portfolio1/main/certificates/6.png"
                     },
                     {
                         title: "Elements of AI",
                         org: "University of Helsinki x Reaktor",
-                        desc: "Learned foundational concepts of artificial intelligence, including machine learning basics, neural networks, and ethical implications of AI."
+                        desc: "Learned foundational concepts of artificial intelligence, including machine learning basics, neural networks, and ethical implications of AI.",
+                        link: "https://raw.githubusercontent.com/shishir-katakam/portfolio1/main/certificates/7.png"
                     },
                     {
                         title: "Microsoft Azure Internship (4 Weeks)",
                         org: "AICTE x Microsoft Elevate",
-                        desc: "Gained hands-on experience with Azure cloud services, focusing on deployment, cloud fundamentals, and AI integrations."
+                        desc: "Gained hands-on experience with Azure cloud services, focusing on deployment, cloud fundamentals, and AI integrations.",
+                        link: "https://raw.githubusercontent.com/shishir-katakam/portfolio1/main/certificates/8.png"
                     },
                     {
                         title: "Introduction to Cybersecurity",
                         org: "Cisco",
-                        desc: "Learned core cybersecurity principles including threats, vulnerabilities, network security, and basic defense mechanisms."
+                        desc: "Learned core cybersecurity principles including threats, vulnerabilities, network security, and basic defense mechanisms.",
+                        link: "https://raw.githubusercontent.com/shishir-katakam/portfolio1/main/certificates/9.png"
                     },
                     {
                         title: "Data Analyst Certification",
                         org: "OneRoadmap",
-                        desc: "Developed skills in data analysis, visualization, and interpretation using modern data tools and techniques."
+                        desc: "Developed skills in data analysis, visualization, and interpretation using modern data tools and techniques.",
+                        link: "https://raw.githubusercontent.com/shishir-katakam/portfolio1/main/certificates/10.png"
                     },
                     {
                         title: "Data Analytics Job Simulation",
                         org: "Deloitte x Forage",
-                        desc: "Worked on real-world business datasets, creating dashboards and deriving insights to support decision-making."
+                        desc: "Worked on real-world business datasets, creating dashboards and deriving insights to support decision-making.",
+                        link: "https://raw.githubusercontent.com/shishir-katakam/portfolio1/main/certificates/11.png"
                     },
                     {
                         title: "Machine Learning with Python",
                         org: "freeCodeCamp",
-                        desc: "Built machine learning models using Python, covering supervised learning, data preprocessing, and evaluation techniques."
+                        desc: "Built machine learning models using Python, covering supervised learning, data preprocessing, and evaluation techniques.",
+                        link: "https://raw.githubusercontent.com/shishir-katakam/portfolio1/main/certificates/12.png"
                     },
                     {
                         title: "Neo4j Certified Professional",
                         org: "Neo4j",
-                        desc: "Gained expertise in graph databases, Cypher query language, and real-world graph data modeling."
+                        desc: "Gained expertise in graph databases, Cypher query language, and real-world graph data modeling.",
+                        link: "https://raw.githubusercontent.com/shishir-katakam/portfolio1/main/certificates/13.png"
                     }
                 ].map((cert, index) => (
                     <motion.div 
@@ -252,7 +265,7 @@ export const Skills = () => {
                             <p className="text-muted font-mono text-xs tracking-wide leading-relaxed lowercase mb-6">{cert.desc}</p>
                         </div>
                         <a 
-                            href="https://github.com/shishir-katakam/certificates" 
+                            href={cert.link || "https://github.com/shishir-katakam/portfolio1/tree/main/certificates"} 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="relative self-start text-accent font-mono text-xs tracking-[0.2em] uppercase hover:text-white transition-colors duration-300 group/link flex items-center gap-2"
