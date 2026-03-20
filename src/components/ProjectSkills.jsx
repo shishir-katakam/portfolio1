@@ -54,7 +54,9 @@ export const Projects = () => {
                     <div className="absolute -inset-40 bg-accent/20 blur-[120px] rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse" />
                     <div className="relative z-10 flex flex-col md:flex-row gap-12 items-start md:items-center justify-between">
                         <div className="max-w-2xl">
-                            <h3 className="font-syne text-4xl md:text-5xl font-black mb-6 uppercase tracking-tight">Codevance</h3>
+                            <h3 className="font-syne text-4xl md:text-5xl font-black mb-6 uppercase tracking-tight">
+                                <DualText professional="Codevance" honest="IT WORKS ON MY MACHINE" />
+                            </h3>
                             <p className="text-muted leading-relaxed font-mono text-sm tracking-wide lowercase mb-8">
                                 AI-Powered Coding Journey Tracker. Track your programming progress across multiple coding platforms. Visualize stats, keep track of problems, link accounts, and get ai-powered insights and learning paths.
                             </p>
@@ -86,7 +88,9 @@ export const Projects = () => {
                     <div className="absolute -inset-40 bg-accent/20 blur-[120px] rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse" />
                     <div className="relative z-10 flex flex-col md:flex-row gap-12 items-start md:items-center justify-between">
                         <div className="max-w-2xl">
-                            <h3 className="font-syne text-4xl md:text-5xl font-black mb-6 uppercase tracking-tight">Niora</h3>
+                            <h3 className="font-syne text-4xl md:text-5xl font-black mb-6 uppercase tracking-tight">
+                                <DualText professional="Niora" honest="LITERALLY JUST RAIN SOUNDS" />
+                            </h3>
                             <p className="text-muted leading-relaxed font-mono text-sm tracking-wide lowercase mb-8">
                                 An immersive music platform engineered for deep focus. Features curated rain sounds, endless audio odysseys, and a beautifully crafted, distraction-free user interface.
                             </p>
