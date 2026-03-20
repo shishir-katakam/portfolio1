@@ -78,13 +78,13 @@ const Splash = ({ onComplete }) => {
             }}
             className="text-muted text-sm mb-1 flex items-center gap-3"
           >
-            <span className="text-accent font-bold opacity-50">0{i + 1}</span>
+            <span className="text-primary font-bold opacity-70">0{i + 1}</span>
             <span className="flex-1">{`> ${text}`}</span>
             {i === scripts.length - 1 && (
               <motion.span 
                 animate={{ opacity: [0, 1, 0] }}
                 transition={{ duration: 0.8, repeat: Infinity }}
-                className="w-2 h-4 bg-accent"
+                className="w-2 h-4 bg-primary/70"
               />
             )}
           </motion.p>
@@ -107,7 +107,7 @@ const Splash = ({ onComplete }) => {
               initial={{ strokeDashoffset: 477 }}
               animate={{ strokeDashoffset: 0 }}
               transition={{ duration: 2, delay: 0.5, ease: "easeInOut" }}
-              className="text-accent"
+              className="text-primary/40"
             />
           </svg>
           <motion.div 
@@ -116,7 +116,7 @@ const Splash = ({ onComplete }) => {
             transition={{ delay: 2.2, duration: 0.5, type: "spring" }}
             className="flex flex-col items-center"
           >
-            <span className="text-4xl font-black text-accent tracking-tighter">100</span>
+            <span className="text-4xl font-black text-primary tracking-tighter">100</span>
             <span className="text-[10px] text-muted tracking-[0.4em] uppercase mt-[-4px]">Percent</span>
           </motion.div>
         </div>
@@ -154,7 +154,7 @@ const Splash = ({ onComplete }) => {
               boxShadow: "0 0 40px var(--color-accent-20)"
             }}
             whileTap={{ scale: 0.95 }}
-            className="relative px-20 py-6 bg-transparent border border-accent/40 text-accent font-syne font-bold uppercase tracking-[0.5em] overflow-hidden group shadow-[0_0_20px_var(--color-accent-10)]"
+            className="relative px-20 py-6 bg-transparent border border-primary/40 text-primary font-syne font-bold uppercase tracking-[0.5em] overflow-hidden group shadow-[0_0_20px_var(--color-primary-10)]"
           >
             {/* Background Fill */}
             <motion.div 
@@ -206,7 +206,7 @@ const Splash = ({ onComplete }) => {
           {/* Subtitle */}
           <motion.p 
             animate={isHovered ? { opacity: 1, y: 10 } : { opacity: 0, y: 0 }}
-            className="absolute left-0 right-0 text-center text-[10px] text-accent tracking-[0.2em] uppercase font-mono mt-2 pointer-events-none"
+            className="absolute left-0 right-0 text-center text-[10px] text-primary/70 tracking-[0.2em] uppercase font-mono mt-2 pointer-events-none"
           >
             Accessing Neural Network...
           </motion.p>
@@ -217,12 +217,12 @@ const Splash = ({ onComplete }) => {
       <motion.div 
         animate={{ top: ["-10%", "110%"] }}
         transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-        className="absolute inset-x-0 h-[2px] bg-accent/5 blur-[1px] pointer-events-none"
+        className="absolute inset-x-0 h-[2px] bg-primary/5 blur-[1px] pointer-events-none"
       />
       <motion.div 
         animate={{ top: ["-10%", "110%"] }}
         transition={{ duration: 4, repeat: Infinity, ease: "linear", delay: 1.5 }}
-        className="absolute inset-x-0 h-[1px] bg-accent/10 pointer-events-none"
+        className="absolute inset-x-0 h-[1px] bg-primary/10 pointer-events-none"
       />
 
       {/* Scanning Line */}
@@ -237,7 +237,7 @@ const Splash = ({ onComplete }) => {
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex flex-col items-center justify-center p-4 md:p-8 relative w-full overflow-hidden shrink-0">
+    <section id="home" className="group min-h-screen flex flex-col items-center justify-center p-4 md:p-8 relative w-full overflow-hidden shrink-0">
       <h1 className="font-syne text-[clamp(1.5rem,5vw,6rem)] font-black leading-[0.8] tracking-tighter text-center uppercase w-full">
         <DualText
           professional="SHISHIR KATAKAM"
@@ -246,7 +246,7 @@ const Hero = () => {
       </h1>
 
       <div className="mt-8 md:mt-12 text-center w-full max-w-4xl px-4">
-        <p className="text-muted text-sm md:text-lg tracking-[0.2em] md:tracking-[0.4em] uppercase">
+        <p className="text-muted text-base md:text-xl tracking-[0.2em] md:tracking-[0.4em] uppercase transition-all duration-700">
           <DualText
             professional="Building the Future with AI & Innovation"
             honest="Hating every line of code that doesn't work"
@@ -262,7 +262,7 @@ const Navbar = () => {
   return (
     <nav className="fixed right-4 md:right-8 top-1/2 -translate-y-1/2 flex-col gap-8 md:gap-12 z-50 hidden md:flex">
       {links.map(link => (
-        <a key={link} href={`#${link.toLowerCase()}`} className="text-[10px] tracking-[0.4em] uppercase font-bold text-muted hover:text-accent transition-colors [writing-mode:vertical-rl]">
+        <a key={link} href={`#${link.toLowerCase()}`} className="text-[13px] tracking-[0.4em] uppercase font-bold text-muted hover:text-accent transition-colors [writing-mode:vertical-rl]">
           {link}
         </a>
       ))}
@@ -284,7 +284,7 @@ const MobileNav = () => {
         <a
           key={link.label}
           href={link.href}
-          className="flex-1 py-4 text-center text-[9px] tracking-[0.25em] uppercase font-bold text-muted hover:text-accent transition-colors"
+          className="flex-1 py-4 text-center text-[12px] tracking-[0.25em] uppercase font-bold text-muted hover:text-accent transition-colors"
         >
           {link.label}
         </a>
@@ -301,7 +301,7 @@ const Sidebar = () => {
   return (
     <div className="fixed left-4 md:left-8 top-1/2 -translate-y-1/2 flex flex-col gap-8 md:gap-12 z-50 hidden md:flex">
       {links.map(link => (
-        <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" className="text-[10px] tracking-[0.4em] uppercase font-bold text-muted hover:text-accent transition-colors [writing-mode:vertical-rl] rotate-180">
+        <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" className="text-[13px] tracking-[0.4em] uppercase font-bold text-muted hover:text-accent transition-colors [writing-mode:vertical-rl] rotate-180">
           {link.name}
         </a>
       ))}
@@ -330,12 +330,12 @@ function PortfolioContent() {
           <Academics />
 
           <section id="contact" className="py-32 md:py-64 flex flex-col items-center justify-center px-4 text-center w-full">
-            <h2 className="font-syne text-[clamp(1.5rem,5vw,6rem)] font-black text-outline hover:text-accent transition-all duration-700 uppercase px-4">
+            <h2 className="font-syne text-[clamp(1.5rem,5vw,6rem)] font-black transition-all duration-700 uppercase px-4">
               <DualText professional="GET IN TOUCH" honest="50% CHANCE I REPLY" />
             </h2>
           </section>
 
-          <footer className="p-8 text-center text-[8px] md:text-[10px] tracking-widest text-muted uppercase pb-24 md:pb-8">
+          <footer className="p-8 text-center text-[11px] md:text-[14px] tracking-widest text-muted uppercase pb-24 md:pb-8">
             © 2025 Shishir Katakam / Designed with Brutalism
           </footer>
         </main>

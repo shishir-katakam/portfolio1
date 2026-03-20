@@ -117,6 +117,8 @@ export const DualText = ({ professional, honest }) => {
     
     // The reveal mask: shows only inside the circle
     const maskImage = useMotionTemplate`radial-gradient(${maskRadius}px circle at ${relativeX}px ${relativeY}px, black 100%, transparent 100%)`;
+    // The hide mask: hides exactly where the circle is
+    const maskImageInverted = useMotionTemplate`radial-gradient(${maskRadius}px circle at ${relativeX}px ${relativeY}px, transparent 100%, black 100%)`;
     
     useEffect(() => {
         // Update whenever mouse moves, page scrolls, or splash screen finishes
@@ -155,18 +157,25 @@ export const DualText = ({ professional, honest }) => {
             onMouseMove={updateRectAndCollision}
             style={{ cursor: 'none' }}
         >
-            {/* Professional Text – always visible (will be covered by the orange ball) */}
-            <span className="[grid-area:1/1] relative whitespace-normal text-center text-inherit flex items-center justify-center pointer-events-none select-none">
+            {/* Professional Text – hidden under the cursor cursor */}
+            <motion.span 
+                className="[grid-area:1/1] relative whitespace-normal text-center text-primary flex items-center justify-center pointer-events-none select-none"
+                style={{
+                    WebkitMaskImage: maskImageInverted,
+                    maskImage: maskImageInverted,
+                }}
+            >
                 {professional}
-            </span>
+            </motion.span>
 
             {/* Honest Text – revealed only where the cursor is */}
             <motion.span
-                className="[grid-area:1/1] relative pointer-events-none text-[var(--color-accent-alt)] font-black whitespace-normal text-center flex items-center justify-center z-[20001]"
+                className="[grid-area:1/1] relative pointer-events-none text-primary font-black whitespace-normal text-center flex items-center justify-center z-[20001]"
                 style={{
                     WebkitMaskImage: maskImage,
                     maskImage: maskImage,
                     opacity: hoverSpring,
+                    WebkitTextStroke: '0',
                 }}
             >
                 {honest}

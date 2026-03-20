@@ -11,13 +11,13 @@ const ProjectRow = ({ professional, honest, index, stats }) => {
             className="w-full border-b border-muted py-12 flex flex-col md:flex-row justify-between items-center group relative"
         >
             <div className="relative">
-                <span className="text-muted text-xs font-mono mb-4 block tracking-[0.3em]">0{index + 1}</span>
-                <h3 className="font-syne text-[clamp(1.2rem,4vw,5rem)] font-black leading-none uppercase text-outline group-hover:text-primary transition-all duration-500 whitespace-nowrap overflow-visible">
+                <span className="text-muted text-sm font-mono mb-4 block tracking-[0.3em]">0{index + 1}</span>
+                <h3 className="font-syne text-[clamp(1.2rem,4vw,5rem)] font-black leading-none uppercase transition-all duration-500 whitespace-nowrap overflow-visible">
                     <DualText professional={professional} honest={honest} />
                 </h3>
             </div>
 
-            <div className="relative text-right mt-4 md:mt-0 font-mono text-muted text-sm tracking-[0.2em] uppercase">
+            <div className="relative text-right mt-4 md:mt-0 font-mono text-muted text-base tracking-[0.2em] uppercase">
                 {stats}
             </div>
 
@@ -55,9 +55,9 @@ export const Projects = () => {
                     <div className="relative z-10 flex flex-col md:flex-row gap-12 items-start md:items-center justify-between">
                         <div className="max-w-2xl">
                             <h3 className="font-syne text-4xl md:text-5xl font-black mb-6 uppercase tracking-tight">
-                                <DualText professional="Codevance" honest="IT WORKS ON MY MACHINE" />
+                                Codevance
                             </h3>
-                            <p className="text-muted leading-relaxed font-mono text-sm tracking-wide lowercase mb-8">
+                            <p className="text-muted leading-relaxed font-mono text-base tracking-wide lowercase mb-8">
                                 AI-Powered Coding Journey Tracker. Track your programming progress across multiple coding platforms. Visualize stats, keep track of problems, link accounts, and get ai-powered insights and learning paths.
                             </p>
                         </div>
@@ -89,9 +89,9 @@ export const Projects = () => {
                     <div className="relative z-10 flex flex-col md:flex-row gap-12 items-start md:items-center justify-between">
                         <div className="max-w-2xl">
                             <h3 className="font-syne text-4xl md:text-5xl font-black mb-6 uppercase tracking-tight">
-                                <DualText professional="Niora" honest="LITERALLY JUST RAIN SOUNDS" />
+                                Niora
                             </h3>
-                            <p className="text-muted leading-relaxed font-mono text-sm tracking-wide lowercase mb-8">
+                            <p className="text-muted leading-relaxed font-mono text-base tracking-wide lowercase mb-8">
                                 An immersive music platform engineered for deep focus. Features curated rain sounds, endless audio odysseys, and a beautifully crafted, distraction-free user interface.
                             </p>
                         </div>
@@ -151,10 +151,10 @@ export const Skills = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-24">
                 {categories.map((cat, i) => (
                     <div key={i}>
-                        <h3 className="text-muted text-xs tracking-[0.3em] uppercase mb-12">{cat.name}</h3>
+                        <h3 className="text-muted text-sm tracking-[0.3em] uppercase mb-12">{cat.name}</h3>
                         <div className="flex flex-wrap gap-4">
                             {cat.skills.map((skill, si) => (
-                                <div key={si} className="px-6 py-3 border border-muted hover:border-accent transition-colors group">
+                                <div key={si} className="px-6 py-3 border border-muted hover:border-accent transition-all duration-300 group">
                                     <DualText professional={skill.name} honest={skill.honest} />
                                 </div>
                             ))}
@@ -258,21 +258,21 @@ export const Skills = () => {
                     >
                         <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                         <div className="relative">
-                            <span className="font-mono text-[10px] tracking-[0.2em] text-accent mb-4 block uppercase">{cert.org}</span>
-                            <h3 className="font-syne text-xl font-bold text-foreground mb-4 leading-snug">
+                            <span className="font-mono text-[13px] tracking-[0.2em] text-accent mb-4 block uppercase">{cert.org}</span>
+                            <h3 className="font-syne text-2xl font-bold text-foreground mb-4 leading-snug">
                                 {index === 0 ? (
                                     <DualText professional={cert.title} honest="SPIDER-VERSE IN THE MAKING" />
                                 ) : (
                                     cert.title
                                 )}
                             </h3>
-                            <p className="text-muted font-mono text-xs tracking-wide leading-relaxed lowercase mb-6">{cert.desc}</p>
+                            <p className="text-muted font-mono text-sm tracking-wide leading-relaxed lowercase mb-6">{cert.desc}</p>
                         </div>
                         <a 
                             href={cert.link || "https://github.com/shishir-katakam/portfolio1/tree/main/certificates"} 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="relative self-start text-accent font-mono text-xs tracking-[0.2em] uppercase hover:text-white transition-colors duration-300 group/link flex items-center gap-2"
+                            className="relative self-start text-accent font-mono text-sm tracking-[0.2em] uppercase hover:text-white transition-colors duration-300 group/link flex items-center gap-2"
                         >
                             View Cert <span className="group-hover/link:translate-x-1 transition-transform">→</span>
                         </a>
@@ -332,19 +332,19 @@ export const Experience = () => {
                         
                         <div className="flex flex-col md:flex-row justify-between mb-4">
                             <div>
-                                <h3 className="font-syne text-2xl md:text-3xl font-bold uppercase mb-2 group-hover:text-accent transition-colors">
+                                <h3 className="font-syne text-2xl md:text-3xl font-bold uppercase mb-2 transition-all duration-700">
                                     <DualText professional={exp.role} honest={exp.honestRole} />
                                 </h3>
-                                <p className="font-mono text-sm tracking-widest text-muted uppercase">{exp.company}</p>
+                                <p className="font-mono text-base tracking-widest text-muted uppercase">{exp.company}</p>
                             </div>
-                            <span className="font-mono text-xs text-muted/50 mt-2 md:mt-0 tracking-[0.2em]">{exp.duration}</span>
+                            <span className="font-mono text-sm text-muted/50 mt-2 md:mt-0 tracking-[0.2em]">{exp.duration}</span>
                         </div>
                         
-                        <p className="text-muted leading-relaxed max-w-3xl mb-8 lowercase tracking-wide">{exp.description}</p>
+                        <p className="text-muted leading-relaxed max-w-3xl mb-8 lowercase tracking-wide text-base">{exp.description}</p>
                         
                         <div className="flex flex-wrap gap-3 mb-6">
                             {exp.tags.map((tag, ti) => (
-                                <span key={ti} className="px-3 py-1 text-[10px] border border-muted/30 font-mono tracking-widest uppercase opacity-70">
+                                <span key={ti} className="px-3 py-1 text-[12px] border border-muted/30 font-mono tracking-widest uppercase opacity-70">
                                     {tag}
                                 </span>
                             ))}
@@ -355,7 +355,7 @@ export const Experience = () => {
                                 href={exp.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 font-mono text-xs text-accent tracking-[0.2em] uppercase hover:text-white transition-colors group/btn"
+                                className="inline-flex items-center gap-2 font-mono text-sm text-accent tracking-[0.2em] uppercase hover:text-white transition-colors group/btn"
                             >
                                 Click to view 
                                 <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
@@ -383,11 +383,11 @@ export const Academics = () => {
                     <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                     <div className="relative flex flex-col h-full justify-between">
                         <div>
-                            <span className="font-mono text-[10px] tracking-widest text-accent mb-6 block uppercase">Ongoing</span>
-                            <h3 className="font-syne text-3xl font-bold uppercase mb-2">
+                            <span className="font-mono text-[13px] tracking-widest text-accent mb-6 block uppercase">Ongoing</span>
+                            <h3 className="font-syne text-3xl font-bold uppercase mb-2 transition-all duration-700">
                                 <DualText professional="MGIT" honest="SO CALLED A TOP COLLEGE" />
                             </h3>
-                            <p className="font-mono text-sm tracking-widest text-muted uppercase mb-8">B.Tech in IT</p>
+                            <p className="font-mono text-base tracking-widest text-muted uppercase mb-8">B.Tech in IT</p>
                         </div>
                         <div className="text-right">
                             <span className="text-6xl font-black text-muted/10 group-hover:text-accent/10 transition-colors duration-500 select-none">01</span>
@@ -405,11 +405,11 @@ export const Academics = () => {
                     <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                     <div className="relative flex flex-col h-full justify-between">
                         <div>
-                            <span className="font-mono text-[10px] tracking-widest text-muted mb-6 block uppercase">2012 - 2022</span>
-                            <h3 className="font-syne text-3xl font-bold uppercase mb-2">
+                            <span className="font-mono text-[13px] tracking-widest text-muted mb-6 block uppercase">2012 - 2022</span>
+                            <h3 className="font-syne text-3xl font-bold uppercase mb-2 transition-all duration-700">
                                 <DualText professional="UoH Kendriya Vidyalaya" honest="10 YEARS OF UNIFORMS" />
                             </h3>
-                            <p className="font-mono text-sm tracking-widest text-muted uppercase mb-8">Schooling</p>
+                            <p className="font-mono text-base tracking-widest text-muted uppercase mb-8">Schooling</p>
                         </div>
                         <div className="text-right">
                             <span className="text-6xl font-black text-muted/10 group-hover:text-accent/10 transition-colors duration-500 select-none">02</span>
