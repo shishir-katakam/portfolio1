@@ -53,7 +53,7 @@ const Splash = ({ onComplete }) => {
         filter: "blur(20px)",
         transition: { duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }
       }}
-      className="fixed inset-0 bg-[#0D0D0D] text-[#B7AB98] z-[10000] flex flex-col items-center justify-center p-8 font-mono overflow-hidden"
+      className="fixed inset-0 bg-background text-primary z-[10000] flex flex-col items-center justify-center p-8 font-mono overflow-hidden"
     >
       {/* Background Glitch Effect */}
       <motion.div 
@@ -62,7 +62,7 @@ const Splash = ({ onComplete }) => {
           scale: [1, 1.02, 1],
         }}
         transition={{ duration: 4, repeat: Infinity }}
-        className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,_#EB5E2811_0%,_transparent_70%)]"
+        className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_center,_var(--color-accent)11_0%,_transparent_70%)]"
       />
 
       <div className="w-full max-w-lg relative z-10">
@@ -76,15 +76,15 @@ const Splash = ({ onComplete }) => {
               duration: 0.5,
               ease: "easeOut"
             }}
-            className="text-[#555555] text-sm mb-1 flex items-center gap-3"
+            className="text-muted text-sm mb-1 flex items-center gap-3"
           >
-            <span className="text-[#EB5E28] font-bold opacity-50">0{i + 1}</span>
+            <span className="text-accent font-bold opacity-50">0{i + 1}</span>
             <span className="flex-1">{`> ${text}`}</span>
             {i === scripts.length - 1 && (
               <motion.span 
                 animate={{ opacity: [0, 1, 0] }}
                 transition={{ duration: 0.8, repeat: Infinity }}
-                className="w-2 h-4 bg-[#EB5E28]"
+                className="w-2 h-4 bg-accent"
               />
             )}
           </motion.p>
@@ -99,7 +99,7 @@ const Splash = ({ onComplete }) => {
       >
         <div className="relative w-40 h-40 flex items-center justify-center group">
           <svg className="absolute inset-0 w-full h-full rotate-[-90deg]">
-            <circle cx="80" cy="80" r="76" stroke="currentColor" strokeWidth="1" fill="transparent" className="text-[#555555]/30" />
+            <circle cx="80" cy="80" r="76" stroke="currentColor" strokeWidth="1" fill="transparent" className="text-muted/30" />
             <motion.circle
               cx="80" cy="80" r="76"
               stroke="currentColor" strokeWidth="3" fill="transparent"
@@ -107,7 +107,7 @@ const Splash = ({ onComplete }) => {
               initial={{ strokeDashoffset: 477 }}
               animate={{ strokeDashoffset: 0 }}
               transition={{ duration: 2, delay: 0.5, ease: "easeInOut" }}
-              className="text-[#EB5E28]"
+              className="text-accent"
             />
           </svg>
           <motion.div 
@@ -116,8 +116,8 @@ const Splash = ({ onComplete }) => {
             transition={{ delay: 2.2, duration: 0.5, type: "spring" }}
             className="flex flex-col items-center"
           >
-            <span className="text-4xl font-black text-[#EB5E28] tracking-tighter">100</span>
-            <span className="text-[10px] text-[#555555] tracking-[0.4em] uppercase mt-[-4px]">Percent</span>
+            <span className="text-4xl font-black text-accent tracking-tighter">100</span>
+            <span className="text-[10px] text-muted tracking-[0.4em] uppercase mt-[-4px]">Percent</span>
           </motion.div>
         </div>
 
@@ -130,19 +130,19 @@ const Splash = ({ onComplete }) => {
           {/* Corner Brackets */}
           <motion.div 
             animate={isHovered ? { scale: 1.1, opacity: 1 } : { scale: 1, opacity: 0.5 }}
-            className="absolute -top-4 -left-4 w-6 h-6 border-t-2 border-l-2 border-[#EB5E28] transition-all duration-300"
+            className="absolute -top-4 -left-4 w-6 h-6 border-t-2 border-l-2 border-accent transition-all duration-300"
           />
           <motion.div 
             animate={isHovered ? { scale: 1.1, opacity: 1 } : { scale: 1, opacity: 0.5 }}
-            className="absolute -top-4 -right-4 w-6 h-6 border-t-2 border-r-2 border-[#EB5E28] transition-all duration-300"
+            className="absolute -top-4 -right-4 w-6 h-6 border-t-2 border-r-2 border-accent transition-all duration-300"
           />
           <motion.div 
             animate={isHovered ? { scale: 1.1, opacity: 1 } : { scale: 1, opacity: 0.5 }}
-            className="absolute -bottom-4 -left-4 w-6 h-6 border-b-2 border-l-2 border-[#EB5E28] transition-all duration-300"
+            className="absolute -bottom-4 -left-4 w-6 h-6 border-b-2 border-l-2 border-accent transition-all duration-300"
           />
           <motion.div 
             animate={isHovered ? { scale: 1.1, opacity: 1 } : { scale: 1, opacity: 0.5 }}
-            className="absolute -bottom-4 -right-4 w-6 h-6 border-b-2 border-r-2 border-[#EB5E28] transition-all duration-300"
+            className="absolute -bottom-4 -right-4 w-6 h-6 border-b-2 border-r-2 border-accent transition-all duration-300"
           />
 
           <motion.button
@@ -151,17 +151,17 @@ const Splash = ({ onComplete }) => {
             onMouseLeave={() => setIsHovered(false)}
             whileHover={{ 
               scale: 1.05,
-              boxShadow: "0 0 40px rgba(235, 94, 40, 0.2)"
+              boxShadow: "0 0 40px var(--color-accent-20)"
             }}
             whileTap={{ scale: 0.95 }}
-            className="relative px-20 py-6 bg-transparent border border-[#EB5E28]/40 text-[#EB5E28] font-syne font-bold uppercase tracking-[0.5em] overflow-hidden group shadow-[0_0_20px_rgba(235,94,40,0.1)]"
+            className="relative px-20 py-6 bg-transparent border border-accent/40 text-accent font-syne font-bold uppercase tracking-[0.5em] overflow-hidden group shadow-[0_0_20px_var(--color-accent-10)]"
           >
             {/* Background Fill */}
             <motion.div 
               initial={false}
               animate={isHovered ? { x: "0%" } : { x: "-100%" }}
               transition={{ type: "spring", stiffness: 120, damping: 20 }}
-              className="absolute inset-0 bg-[#EB5E28]"
+              className="absolute inset-0 bg-accent"
             />
 
             {/* Top Scanning Edge */}
@@ -194,19 +194,19 @@ const Splash = ({ onComplete }) => {
 
             {/* Decorative dots */}
             <div className="absolute top-2 right-2 flex gap-1.5">
-              <div className="w-1.5 h-1.5 bg-[#EB5E28] group-hover:bg-white rounded-full animate-pulse shadow-[0_0_5px_currentColor]" />
-              <div className="w-1.5 h-1.5 bg-[#EB5E28] group-hover:bg-white rounded-full animate-pulse delay-150 shadow-[0_0_5px_currentColor]" />
-              <div className="w-1.5 h-1.5 bg-[#EB5E28] group-hover:bg-white rounded-full animate-pulse delay-300 shadow-[0_0_5px_currentColor]" />
+              <div className="w-1.5 h-1.5 bg-accent group-hover:bg-white rounded-full animate-pulse shadow-[0_0_5px_currentColor]" />
+              <div className="w-1.5 h-1.5 bg-accent group-hover:bg-white rounded-full animate-pulse delay-150 shadow-[0_0_5px_currentColor]" />
+              <div className="w-1.5 h-1.5 bg-accent group-hover:bg-white rounded-full animate-pulse delay-300 shadow-[0_0_5px_currentColor]" />
             </div>
 
             {/* Bottom Accent */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#EB5E28]/10 group-hover:bg-white/20 transition-colors" />
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-accent/10 group-hover:bg-white/20 transition-colors" />
           </motion.button>
 
           {/* Subtitle */}
           <motion.p 
             animate={isHovered ? { opacity: 1, y: 10 } : { opacity: 0, y: 0 }}
-            className="absolute left-0 right-0 text-center text-[10px] text-[#EB5E28] tracking-[0.2em] uppercase font-mono mt-2 pointer-events-none"
+            className="absolute left-0 right-0 text-center text-[10px] text-accent tracking-[0.2em] uppercase font-mono mt-2 pointer-events-none"
           >
             Accessing Neural Network...
           </motion.p>
@@ -217,19 +217,19 @@ const Splash = ({ onComplete }) => {
       <motion.div 
         animate={{ top: ["-10%", "110%"] }}
         transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-        className="absolute inset-x-0 h-[2px] bg-[#EB5E2811] blur-[1px] pointer-events-none"
+        className="absolute inset-x-0 h-[2px] bg-accent/5 blur-[1px] pointer-events-none"
       />
       <motion.div 
         animate={{ top: ["-10%", "110%"] }}
         transition={{ duration: 4, repeat: Infinity, ease: "linear", delay: 1.5 }}
-        className="absolute inset-x-0 h-[1px] bg-[#EB5E2822] pointer-events-none"
+        className="absolute inset-x-0 h-[1px] bg-accent/10 pointer-events-none"
       />
 
       {/* Scanning Line */}
       <motion.div 
         animate={{ top: ["0%", "100%", "0%"] }}
         transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-        className="absolute inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-[#EB5E2844] to-transparent pointer-events-none"
+        className="absolute inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-accent/30 to-transparent pointer-events-none"
       />
     </motion.div>
   );
@@ -246,7 +246,7 @@ const Hero = () => {
       </h1>
 
       <div className="mt-8 md:mt-12 text-center w-full max-w-4xl px-4">
-        <p className="text-[#555555] text-sm md:text-lg tracking-[0.2em] md:tracking-[0.4em] uppercase">
+        <p className="text-muted text-sm md:text-lg tracking-[0.2em] md:tracking-[0.4em] uppercase">
           <DualText
             professional="Building the Future with AI & Innovation"
             honest="Hating every line of code that doesn't work"
@@ -260,10 +260,33 @@ const Hero = () => {
 const Navbar = () => {
   const links = ['HOME', 'WORK', 'SKILLS', 'CONTACT'];
   return (
-    <nav className="fixed right-4 md:right-8 top-1/2 -translate-y-1/2 flex flex-col gap-8 md:gap-12 z-50 hidden md:flex">
+    <nav className="fixed right-4 md:right-8 top-1/2 -translate-y-1/2 flex-col gap-8 md:gap-12 z-50 hidden md:flex">
       {links.map(link => (
-        <a key={link} href={`#${link.toLowerCase()}`} className="text-[10px] tracking-[0.4em] uppercase font-bold text-[#555555] hover:text-[#EB5E28] transition-colors [writing-mode:vertical-rl]">
+        <a key={link} href={`#${link.toLowerCase()}`} className="text-[10px] tracking-[0.4em] uppercase font-bold text-muted hover:text-accent transition-colors [writing-mode:vertical-rl]">
           {link}
+        </a>
+      ))}
+    </nav>
+  );
+};
+
+const MobileNav = () => {
+  const links = [
+    { label: 'Home', href: '#home' },
+    { label: 'Work', href: '#flagship-projects' },
+    { label: 'Skills', href: '#skills' },
+    { label: 'Certs', href: '#certificates' },
+    { label: 'Contact', href: '#contact' },
+  ];
+  return (
+    <nav className="fixed bottom-0 left-0 right-0 z-50 flex md:hidden bg-background/95 backdrop-blur border-t border-muted/20">
+      {links.map(link => (
+        <a
+          key={link.label}
+          href={link.href}
+          className="flex-1 py-4 text-center text-[9px] tracking-[0.25em] uppercase font-bold text-muted hover:text-accent transition-colors"
+        >
+          {link.label}
         </a>
       ))}
     </nav>
@@ -278,7 +301,7 @@ const Sidebar = () => {
   return (
     <div className="fixed left-4 md:left-8 top-1/2 -translate-y-1/2 flex flex-col gap-8 md:gap-12 z-50 hidden md:flex">
       {links.map(link => (
-        <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" className="text-[10px] tracking-[0.4em] uppercase font-bold text-[#555555] hover:text-[#EB5E28] transition-colors [writing-mode:vertical-rl] rotate-180">
+        <a key={link.name} href={link.url} target="_blank" rel="noopener noreferrer" className="text-[10px] tracking-[0.4em] uppercase font-bold text-muted hover:text-accent transition-colors [writing-mode:vertical-rl] rotate-180">
           {link.name}
         </a>
       ))}
@@ -291,7 +314,7 @@ function PortfolioContent() {
 
   return (
     <CursorProvider isLoaded={isLoaded}>
-      <div className="bg-[#0D0D0D] text-[#B7AB98] min-h-screen font-mono w-full overflow-x-hidden">
+      <div className="bg-background text-primary min-h-screen font-mono w-full overflow-x-hidden">
         <AnimatePresence>
           {!isLoaded && <Splash onComplete={() => setIsLoaded(true)} />}
         </AnimatePresence>
@@ -299,6 +322,7 @@ function PortfolioContent() {
         <main className={`w-full overflow-x-hidden transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
           <Navbar />
           <Sidebar />
+          <MobileNav />
           <Hero />
           <Projects />
           <Experience />
@@ -306,12 +330,12 @@ function PortfolioContent() {
           <Academics />
 
           <section id="contact" className="py-32 md:py-64 flex flex-col items-center justify-center px-4 text-center w-full">
-            <h2 className="font-syne text-[clamp(1.5rem,5vw,6rem)] font-black text-outline hover:text-[#EB5E28] transition-all duration-700 uppercase px-4">
+            <h2 className="font-syne text-[clamp(1.5rem,5vw,6rem)] font-black text-outline hover:text-accent transition-all duration-700 uppercase px-4">
               <DualText professional="GET IN TOUCH" honest="50% CHANCE I REPLY" />
             </h2>
           </section>
 
-          <footer className="p-8 text-center text-[8px] md:text-[10px] tracking-widest text-[#555555] uppercase pb-24 md:pb-8">
+          <footer className="p-8 text-center text-[8px] md:text-[10px] tracking-widest text-muted uppercase pb-24 md:pb-8">
             © 2025 Shishir Katakam / Designed with Brutalism
           </footer>
         </main>

@@ -31,8 +31,8 @@ const ProjectRow = ({ professional, honest, index, stats }) => {
 
 export const Projects = () => {
     const projects = [
-        { professional: "AI AR KEYBOARD", honest: "TYPING ENGINE OF CHAOS", stats: "500+ DAILY USERS" },
-        { professional: "MGIT BUS TRACKER", honest: "BUS IS NEVER ON TIME", stats: "10K+ CONVERSIONS" },
+        { professional: "AI AR KEYBOARD", honest: "TYPING ENGINE OF CHAOS", stats: "" },
+        { professional: "MGIT BUS TRACKER", honest: "BUS IS NEVER ON TIME", stats: "" },
         { professional: "FILE CONVERTER", honest: "FFMPEG IS MAGIC", stats: "PYTHON + BOT API" }
     ];
 
@@ -49,7 +49,7 @@ export const Projects = () => {
                     viewport={{ once: true }}
                     whileHover={{ scale: 1.02 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className="relative border border-muted/40 p-12 bg-background/50 backdrop-blur-md overflow-hidden group shadow-[0_0_40px_-20px_rgba(235,96,40,0.3)] hover:shadow-[0_0_80px_-20px_rgba(235,96,40,0.5)] transition-shadow duration-500"
+                    className="relative border border-muted/40 p-12 bg-background/50 backdrop-blur-md overflow-hidden group shadow-[0_0_40px_-20px_var(--color-accent-30)] hover:shadow-[0_0_80px_-20px_var(--color-accent-40)] transition-shadow duration-500"
                 >
                     <div className="absolute -inset-40 bg-accent/20 blur-[120px] rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse" />
                     <div className="relative z-10 flex flex-col md:flex-row gap-12 items-start md:items-center justify-between">
@@ -80,10 +80,10 @@ export const Projects = () => {
                     viewport={{ once: true }}
                     whileHover={{ scale: 1.02 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.1 }}
-                    className="relative border border-muted/40 p-12 bg-background/50 backdrop-blur-md overflow-hidden group shadow-[0_0_40px_-20px_rgba(59,130,246,0.2)] hover:shadow-[0_0_80px_-20px_rgba(59,130,246,0.4)] transition-shadow duration-500"
+                    className="relative border border-muted/40 p-12 bg-background/50 backdrop-blur-md overflow-hidden group shadow-[0_0_40px_-20px_var(--color-accent-20)] hover:shadow-[0_0_80px_-20px_var(--color-accent-40)] transition-shadow duration-500"
                 >
                     {/* Deep blue/teal glow for Niora */}
-                    <div className="absolute -inset-40 bg-blue-500/20 blur-[120px] rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse" />
+                    <div className="absolute -inset-40 bg-accent/20 blur-[120px] rounded-full pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-pulse" />
                     <div className="relative z-10 flex flex-col md:flex-row gap-12 items-start md:items-center justify-between">
                         <div className="max-w-2xl">
                             <h3 className="font-syne text-4xl md:text-5xl font-black mb-6 uppercase tracking-tight">Niora</h3>
@@ -95,7 +95,7 @@ export const Projects = () => {
                             href="https://music.endiidishishir.qzz.io" 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="flex-shrink-0 border border-muted text-foreground px-10 py-5 font-mono text-xs tracking-[0.2em] font-bold uppercase hover:bg-blue-500 hover:text-white hover:border-blue-500 transition-all duration-300 flex items-center gap-4 group-hover:bg-blue-500 group-hover:text-white group-hover:border-blue-500 rounded-none shadow-lg hover:shadow-blue-500/50"
+                            className="flex-shrink-0 border border-muted text-primary px-10 py-5 font-mono text-xs tracking-[0.2em] font-bold uppercase hover:bg-accent hover:text-background hover:border-accent transition-all duration-300 flex items-center gap-4 group-hover:bg-accent group-hover:text-background group-hover:border-accent rounded-none shadow-lg hover:shadow-accent/50"
                         >
                             Listen to Niora
                             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -250,7 +250,7 @@ export const Skills = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.05 }}
-                        className={`border border-muted/30 p-8 hover:border-accent transition-all duration-300 relative group overflow-hidden flex flex-col justify-between ${index === 0 ? 'md:col-span-2 lg:col-span-3 lg:w-2/3 shadow-[0_0_30px_-15px_rgba(235,96,40,0.2)]' : ''}`}
+                        className={`border border-muted/30 p-8 hover:border-accent transition-all duration-300 relative group overflow-hidden flex flex-col justify-between ${index === 0 ? 'md:col-span-2 lg:col-span-3 lg:w-2/3 shadow-[0_0_30px_-15px_var(--color-accent-20)]' : ''}`}
                     >
                         <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                         <div className="relative">

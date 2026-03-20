@@ -62,7 +62,7 @@ const CustomCursor = () => {
             }}
             className="fixed pointer-events-none z-[20000] flex items-center justify-center"
         >
-            <div className="w-full h-full rounded-full bg-accent shadow-[0_0_50px_rgba(235,94,40,0.3)]" />
+            <div className="w-full h-full rounded-full bg-accent shadow-[0_0_50px_var(--color-accent-30)]" />
         </motion.div>
     );
 };
@@ -162,7 +162,7 @@ export const DualText = ({ professional, honest }) => {
 
             {/* Honest Text – revealed only where the cursor is */}
             <motion.span
-                className="[grid-area:1/1] relative pointer-events-none text-[#0D0D0D] font-black whitespace-normal text-center flex items-center justify-center z-[20001]"
+                className="[grid-area:1/1] relative pointer-events-none text-[var(--color-accent-alt)] font-black whitespace-normal text-center flex items-center justify-center z-[20001]"
                 style={{
                     WebkitMaskImage: maskImage,
                     maskImage: maskImage,
